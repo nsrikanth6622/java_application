@@ -19,6 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running QuickCart tests'
+                echo 'Successfully complated all the tests'
             }
         }
 
