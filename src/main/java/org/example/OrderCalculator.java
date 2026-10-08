@@ -18,4 +18,10 @@ public class OrderCalculator {
 
         return price * quantity;
     }
+    public double calculateTax(
+            double orderTotal,
+            double taxRate) {
+
+        return orderTotal * taxRate;
+    }
 }
