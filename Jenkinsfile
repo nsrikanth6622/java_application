@@ -78,4 +78,21 @@ pipeline {
             }  
         }
     }
+    post{
+        success{
+            echo "===================="
+            echo "quickcart pipeline sucess"
+            echo "====================="
+        }
+        failure{
+            echo '================================='
+            echo 'QuickCart Pipeline FAILED'
+            echo '================================='
+        }
+        always{
+            echo "Job: ${env.JOB_NAME}"
+            echo "Build: ${env.BUILD_NUMBER}"
+            echo 'Pipeline execution completed'
+        }
+    }
 }
