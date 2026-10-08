@@ -26,3 +26,4 @@ public class OrderCalculator {
     }
 }
 /* added to check for automatic commit */
+/* added to check for automatic commit again build */
