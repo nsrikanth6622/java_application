@@ -62,7 +62,17 @@ pipeline {
             steps {
                 retry(3)
                 {
-                echo 'Creating QuickCart package'
+                    script
+                    {   
+                        echo 'Creating QuickCart package'
+                        attempt++
+                        echo "packaging attempt: ${attempt}"
+                        if(attempt < 3)
+                        {
+                            error "simulated temporary packaging failure"
+                        }
+                    }
+                echo 'package created successfully'
                 }
             }  
         }
