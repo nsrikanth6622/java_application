@@ -51,24 +51,20 @@ pipeline {
                         return params.RUN_TESTS
                     }
                 }
-            steps {
-
-                timeout(time: 5, unit: 'SECONDS')
-                {
-
-                    echo 'Running QuickCart tests'
-                
-                    bat 'powershell -Command "Start-Sleep -Seconds 10"'
-
-                    echo 'Successfully complated all the tests'
-                }
+            steps 
+            {
+                echo 'Running QuickCart tests'
+                echo 'Successfully complated all the tests'
             }
         }
 
         stage('Package') {
             steps {
+                retry(3)
+                {
                 echo 'Creating QuickCart package'
-            }
+                }
+            }  
         }
     }
 }
