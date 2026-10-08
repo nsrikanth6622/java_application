@@ -25,3 +25,4 @@ public class OrderCalculator {
         return orderTotal * taxRate;
     }
 }
+/* added to check for automatic commit */
