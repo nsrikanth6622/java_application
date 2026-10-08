@@ -20,7 +20,8 @@ pipeline {
             description: 'execute application tests'
         )
     }
-    stages {
+    stages 
+    {
         stage('Initialize') {
             steps {
                 echo 'Initializing QuickCart Pipeline'
@@ -43,6 +44,13 @@ pipeline {
         }
 
         stage('Test') {
+            when
+                {
+                    expression 
+                    {
+                        return params.RUN_TESTS
+                    }
+                }
             steps {
                 echo 'Running QuickCart tests'
                 echo 'Successfully complated all the tests'
