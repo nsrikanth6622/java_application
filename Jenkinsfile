@@ -27,6 +27,9 @@ pipeline {
                 echo "Job Name: ${env.JOB_NAME}"
                 echo "Build Number: ${env.BUILD_NUMBER}"
                 echo "Workspace: ${env.WORKSPACE}"
+
+                echo "environment is: ${params.EVIRONMENT}"
+                echo "run tests or not: ${params.RUN_TESTS}"
             }
         }
 
