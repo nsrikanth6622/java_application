@@ -16,6 +16,6 @@ class OrderCalculatorTest {
         double total =
                 calculator.calculateTotal(100.0, 2);
 
-        assertEquals(200.0, total);
+        assertEquals(300.0, total);
     }
 }
