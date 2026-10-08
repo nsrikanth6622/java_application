@@ -14,7 +14,7 @@ pipeline {
             choices: ['dev','qa','prod'],
             description: 'select your environment'
         )
-        booleanparam(
+        booleanParam(
             name: 'RUN_TESTS',
             defaultValue: true,
             description: 'execute application tests'
