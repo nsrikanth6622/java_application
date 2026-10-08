@@ -2,13 +2,25 @@ pipeline {
 
     agent any
 
-    environment {
+    environment 
+    {
         APP_NAME = 'quickcart-order-service'
         APP_VERSION = '1.0'
     }
-
+    parameters 
+    {
+        choice (
+            name: 'EVIRONMENT',
+            choices: ['dev','qa','prod'],
+            description: 'select your environment'
+        )
+        booleanparam(
+            name: 'RUN_TESTS',
+            defaultValue: true,
+            description: 'execute application tests'
+        )
+    }
     stages {
-
         stage('Initialize') {
             steps {
                 echo 'Initializing QuickCart Pipeline'
