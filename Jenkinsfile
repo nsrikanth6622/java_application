@@ -52,7 +52,13 @@ pipeline {
                     }
                 }
             steps {
+
+                timeout(time: 5, unit: 'SECONDS')
+
                 echo 'Running QuickCart tests'
+                
+                bat 'powershell -Command "Start-Sleep -Seconds 10"'
+
                 echo 'Successfully complated all the tests'
             }
         }
